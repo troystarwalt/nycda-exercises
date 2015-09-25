@@ -1,4 +1,6 @@
 // order copied from the whiteboard, no hating
+// one way to create objects
+
 var people = [
   { name: "Alec Stone"
   , repo: "https://github.com/AlecStone"
@@ -40,8 +42,8 @@ var people = [
   , repo: ""
   , slackname:""  }
 , { name: "Justin Bardliving"
-  , repo: ""
-  , slackname:""  }
+  , repo: "https://github.com/jbl"
+  , slackname:"" }
 ]
 
 var listElement = $("#list");
@@ -49,6 +51,3 @@ for (var i=0; i<people.length; i++){
     var element = "<li>" + people[i].name + "⇒" + people[i].repo +"</li>";
     listElement.append(element);
 }
-
-// listElement.append("<p>hello</p>");
-// listElement.append("<p>hello</p>");
