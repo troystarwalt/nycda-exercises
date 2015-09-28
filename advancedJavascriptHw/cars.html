@@ -3,12 +3,15 @@
 <head>
 </head>
 <body>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<div id="car1"></div>
+	<div id="car2"></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
 
 	<script>
-		var Car = function (x, y) {
+		var Car = function (id, x, y) {
 			this.x = x;
 			this.y = y;
+			this.id = id;
 		};
 
 		Car.prototype.draw = function () {
@@ -19,7 +22,7 @@
 				left: this.x,
 				top: this.y
 			});
-			$("body").html(carElement);
+			$(this.id).html(carElement);
 		};
 
 		Car.prototype.moveRight = function (distance, time, frames) {
@@ -49,8 +52,11 @@
 			}
 		}
 
-		var supercar = new Car(100,100);
+		var supercar = new Car("#car1", 100,100);
+
+		var regularcar = new Car("#car2", 300,300);
 		supercar.draw();
+		regularcar.draw();
 
 	</script>
 </body>
