@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<script>
+			// assume input is always a 1 character long string
+			// no need for error checking on:
+			// 	- longer strings
+			//	- different types
+			function vowelSimple(s){
+				if (s === "a")
+					return true;
+				else if (s === "e")
+					return true;
+				else if (s === "i")
+					return true;
+				else if (s === "o")
+					return true;
+				else if (s === "u")
+					return true;
+				else
+					return false;
+
+			}
+
+
+			function vowel(s){
+				var vowels = ["a", "e", "i", "o", "u"];
+				// console.log(s, vowels);
+
+				for (var i=0; i<vowels.length; i++){
+					// console.log("current vowel:", vowels[i]);
+
+					if (s === vowels[i])
+						return true;
+				}
+
+				// didn't return true for any of the vowels we checked, so let's return false outside of the for loop
+				return false;
+
+			}
+
+			// "abcdef".split("")
+			// "This is a sentence".split("")
+			// "This is a sentence".split(" ")
+			// michaelgabay/@akatriel
+			function vowelInString(s){
+				var a = [];
+				var vowels = ["a", "e", "i", "o", "u"];
+				a = s.split("");
+				console.log("vowels:", vowels);
+				console.log("a     :", a);
+				var vowelFound = false;
+				for (var i = 0; i < a.length; i++) {
+					for (var j = 0; j < vowels.length; j++){
+						console.log(
+							"i:", i,
+							"j:", j, 
+							a[i], 
+							vowels[j],
+							a[i] === vowels[j]);
+						if (a[i] === vowels[j]){
+							vowelFound = true;
+							break;
+						}
+					}
+				};
+				if (vowelFound){
+					console.log("there is a vowel");
+					return vowelFound;
+				}
+				else {
+					console.log("there are no vowels");
+					return vowelFound;
+				}
+
+			}
+
+			vowel(" "); // false
+			vowel("b"); // false
+			vowel("a"); // true
+			vowel("e"); // true
+			vowel("i"); // true
+			vowel("o"); // true
+			vowel("u"); // true
+			vowel("y"); // false
+			vowel("?"); // false
+
+			// vowelInString("abcd");
+
+
+			// "I AM A STATEMENT".toLowerCase()
+		</script>
+	</body>
+</html>
