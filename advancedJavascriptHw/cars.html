@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<script>
+		var Car = function (x, y) {
+			this.x = x;
+			this.y = y;
+		};
+
+		Car.prototype.draw = function () {
+			var carHtml = '<img src="http://nostarch.com/images/car.png">';
+			var carElement = $(carHtml);
+			carElement.css({
+				position: "absolute",
+				left: this.x,
+				top: this.y
+			});
+			$("body").html(carElement);
+		};
+
+		Car.prototype.moveRight = function (distance, time, frames) {
+			if (distance === undefined){
+				distance = 10; // pixels
+			}
+			if (time === undefined){
+				time = 1000; // milliseconds
+			}
+
+			if (frames === undefined){
+				frames = 30; // frames
+			}
+			console.log("We're changing from Car:", this.x, "to", this.x + distance);
+
+			var self = this;
+			var framesPerMillisecond = frames / time;
+			var distancePerFrame = distance / frames;
+
+			for (var i=0; i<frames; i++){
+				(function(i){
+					setTimeout(function(){
+						self.x += distancePerFrame;
+						self.draw();
+					}, i * framesPerMillisecond);
+				})(i);
+			}
+		}
+
+		var supercar = new Car(100,100);
+		supercar.draw();
+
+	</script>
+</body>
+</html>
