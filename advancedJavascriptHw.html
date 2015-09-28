@@ -23,11 +23,58 @@
 				}
 				
 			}
-			console.log(maxOfThree(3,2,1)) // expects 3 (first argument)
 
-			console.log(maxOfThree(1,3,2)) // expects 3 (second argument)
+			function maxOfThreeWay2(apple,banana, carrot){
+				var numbers = [apple, banana, carrot];
 
-			console.log(maxOfThree(1,2,3)) // expects 3 (third argument)
+				console.log("before sorted", numbers);
+				numbers = numbers.sort();
+				console.log("after  sorted", numbers);
+				return numbers[numbers.length - 1];
+			}
+
+			// nested statements. Really confusing, please don't do this if there's a more 'readable' way.
+			function maxOfThreeWay3(a, b, c){
+				if (a > b){
+					if (a > c){
+						return a;
+					}
+					else {
+						if (c > a){
+							return c;
+						}
+						else {
+							return a;
+						}
+
+					}
+				}
+				else {
+					if (b > c){
+						return b;
+					}
+					else {
+						if (c > a){
+							return c;
+						}
+						else {
+							return a;
+						}
+					}
+				}
+
+			}
+
+			// [].sort() sorts lexicographically on strings
+			// ["a", "amanda", "azra", "abigail", "azzzzzzzz"].sort()
+			// ["a", "a()", "a0", "aa", "a[0]"].sort()
+
+
+			console.log(maxOfThreeWay3(3,2,1)) // expects 3 (first argument)
+
+			console.log(maxOfThreeWay3(1,3,2)) // expects 3 (second argument)
+
+			console.log(maxOfThreeWay3(1,2,3)) // expects 3 (third argument)
 
 		</script>
 	</body>
