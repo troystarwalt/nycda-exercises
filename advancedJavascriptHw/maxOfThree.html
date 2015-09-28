@@ -24,11 +24,15 @@
 				
 			}
 
+			function compareNumbers(a, b){
+				return a - b;
+			}
+
 			function maxOfThreeWay2(apple,banana, carrot){
 				var numbers = [apple, banana, carrot];
 
 				console.log("before sorted", numbers);
-				numbers = numbers.sort();
+				numbers = numbers.sort(compareNumbers);
 				console.log("after  sorted", numbers);
 				return numbers[numbers.length - 1];
 			}
