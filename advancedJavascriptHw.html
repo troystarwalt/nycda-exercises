@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+
+	<body>
+		<script>
+
+			function maxOfThreeWay1(apple, banana, carrot){
+
+				if (apple > banana &&
+					apple > carrot){
+					return apple;
+				}
+
+				if (banana > apple && banana > carrot){
+					return banana;
+				}
+
+				if (carrot > banana &&
+					carrot > apple) {
+					return carrot;
+				}
+				
+			}
+			console.log(maxOfThree(3,2,1)) // expects 3 (first argument)
+
+			console.log(maxOfThree(1,3,2)) // expects 3 (second argument)
+
+			console.log(maxOfThree(1,2,3)) // expects 3 (third argument)
+
+		</script>
+	</body>
+</html>
