@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bottle Song</title>
+</head>
+<body>
+	<script>
+    	var bottleCount = 99;
+
+    	while (bottleCount > 0) {
+    		if (bottleCount == 2) {
+    			console.log(bottleCount + " bottles of root beer on the wall, " + bottleCount + 
+    				" bottles of root beer...take one down, pass it around, " 
+    				+ (bottleCount - 1) + " bottle of root beer on the wall!");
+    		}
+
+    		else if (bottleCount == 1) {
+    			console.log(bottleCount + " bottle of root beer on the wall, " + bottleCount + 
+    				" bottle of root beer...take one down, pass it around, " +  
+    				"no more bottles of root beer on the wall!");
+    		}
+
+    		else {
+    			console.log(bottleCount + " bottles of root beer on the wall, " + bottleCount + 
+    				" bottles of root beer...take one down, pass it around, " 
+    				+ (bottleCount - 1) + " bottles of root beer on the wall!");
+    		}
+        	bottleCount--;
+    	}
+	</script>
+</body>
+</html>
