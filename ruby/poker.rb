@@ -37,6 +37,8 @@
 # a rose by any other name would smell just as sweet?
 # same with these variables
 class Card
+	attr_accessor :rank
+	attr_accessor :suit
 	def initialize(rank, suit)
 		# puts "Card.initialize()", rank, suit
 		@rank = rank
@@ -49,7 +51,7 @@ class Card
 		#        7 of Spades -> Card(7, spades)
 		"Card(#{@rank}, #{@suit})"
 	end
-	
+
 end
 
 # queenClubs = Card.new("A", "hearts")
@@ -76,17 +78,36 @@ class PokerHand
 # 	bonus: straight
 	def initialize(cards)
 		puts "PokerHand.initialize()", cards
+		@cards = cards
 	end
 
-	def four_of_a_kind
 
+	def pair
+		cardCount = {}
+		@cards.each do |card|
+			card.rank
+			if cardCount[card.rank].nil?
+			cardCount[card.rank] = 1
+			else
+				cardCount[card.rank] += 1
+			end
+		end
+		puts cardCount
+
+		cardCount.keys.each do |k|
+			if cardCount [k]>= 2
+				return true
+			end
+		end
+		return false	
 	end
-	
+	def to_s
+		@cards.to_s
+	end
+# end
+ # myarray = myhand4.each {|x| puts "#{x},#{y}"}
+ # x = 	
 end
-
-# hand0 = PokerHand.new([
-# 	Card.new("Q", "Clubs")
-# ])
 
 hand1 = PokerHand.new([
 	Card.new("A","Hearts"),
@@ -96,6 +117,8 @@ hand1 = PokerHand.new([
 	Card.new("3","Diamonds")
 ])
 
+puts hand1.pair
+
 hand2 = PokerHand.new([
 	Card.new("A","Hearts"),
 	Card.new("Q","Hearts"),
@@ -103,6 +126,8 @@ hand2 = PokerHand.new([
 	Card.new("9","Hearts"),
 	Card.new("3","Hearts")
 ])
+
+puts hand2.pair
 
 hand3 = PokerHand.new([
 	Card.new("A", "Hearts"),
@@ -112,6 +137,8 @@ hand3 = PokerHand.new([
 	Card.new("10", "Hearts")
 ])
 
+puts hand3.pair
+
 hand4 = PokerHand.new([
 	Card.new("J", "Hearts"),
 	Card.new("3", "Clubs"),
@@ -120,12 +147,4 @@ hand4 = PokerHand.new([
 	Card.new("3", "Diamonds")
 ])
 
-
-
-# puts hand1.pair
-# puts hand1.triple
-# puts hand1.flush
-
-# puts hand2.pair
-# puts hand2.triple
-# puts hand2.flush
+puts hand4.pair
