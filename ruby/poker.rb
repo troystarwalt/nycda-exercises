@@ -14,35 +14,79 @@
 # 6.) if you don't find anything return not a winning hand.
 
 
+# class Card
+# 	suit = ["spades", "clubs", "hearts", "diamonds"]
+# 	rank = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+# 	attr_accessor :suit, :rank
+# 	def initialize(type)
+# 		puts "Playing Poker"
+# 		@type = type
+# 	end
+
+# # aceSpades = Card.new["A", "spades"]
+# # aceClubs = Card.new("A", "clubs")
+# # aceHearts = Card.new("A", "hearts")
+# # aceDiamonds = Card.new("A", "diamonds")
+# # twoSpades = Card.new("2", "spades")
+# # threeSpades = Card.new("3", "spades")
+# # fourSpades = Card.new("4", "spades")
+# # fiveSpades = Card.new("5", "spades")
+
+# end
+
+# a rose by any other name would smell just as sweet?
+# same with these variables
 class Card
-	# suit = spades, clubs, hearts, diamonds
-	# rank = A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K
-	attr_accessor :type
-	def initialize(type)
-		puts "Playing Poker"
-		@type = type
+	def initialize(rank, suit)
+		# puts "Card.initialize()", rank, suit
+		@rank = rank
+		@suit = suit
 	end
 
 	def to_s
-		"PokerHand(#{@type})"
+		#I want this to print Card(rank, suit)
+		# so for 6 of Hearts -> Card(6, hearts)
+		#        7 of Spades -> Card(7, spades)
+		"Card(#{@rank}, #{@suit})"
 	end
-
+	
 end
+
+# queenClubs = Card.new("A", "hearts")
+# jackOfAllTrades = Card.new("10", "clubs")
+
+# puts queenClubs
+# puts jackOfAllTrades
+
+# def add_two(x)
+# 	2+x
+# end
+
+# puts add_two(5)
+# puts add_two(7)
 
 class PokerHand
 	# has 5 Cards	
 	# has the following methods:
 
-	# pair = [A, A, _, _, _]
-	# triple = [K, K, _, K, _]
-	# four_of_a_kind = [Q, Q, _, Q, Q]
-	# flush = all cards have the same suit
-	# bonus: straight
-	def initialize(pokerHands)
-		hands.each do |h|
-			if h.
+# 	pair = [A, A, _, _, _]
+# 	triple = [K, K, _, K, _]
+# 	four_of_a_kind = [Q, Q, _, Q, Q]
+# 	flush = 
+# 	bonus: straight
+	def initialize(cards)
+		puts "PokerHand.initialize()", cards
+	end
+
+	def four_of_a_kind
+
+	end
 	
 end
+
+# hand0 = PokerHand.new([
+# 	Card.new("Q", "Clubs")
+# ])
 
 hand1 = PokerHand.new([
 	Card.new("A","Hearts"),
@@ -61,29 +105,27 @@ hand2 = PokerHand.new([
 ])
 
 hand3 = PokerHand.new([
-	Card.new("A", "Hearts")
-	Card.new("Q", "Hearts")
-	Card.new("Q", "Clubs")
-	Card.new("Q", "Spades")
+	Card.new("A", "Hearts"),
+	Card.new("Q", "Hearts"),
+	Card.new("Q", "Clubs"),
+	Card.new("Q", "Spades"),
 	Card.new("10", "Hearts")
 ])
 
 hand4 = PokerHand.new([
-	Card.new("J", "Hearts")
-	Card.new("3", "Clubs")
-	Card.new("3", "Spaeds")
-	Card.new("3", "Hearts")
+	Card.new("J", "Hearts"),
+	Card.new("3", "Clubs"),
+	Card.new("3", "Spades"),
+	Card.new("3", "Hearts"),
 	Card.new("3", "Diamonds")
 ])
 
 
 
-puts hand1.pair
-puts hand1.triple
-puts hand1.flush
+# puts hand1.pair
+# puts hand1.triple
+# puts hand1.flush
 
-puts hand2.pair
-puts hand2.triple
-puts hand2.flush
-
-
+# puts hand2.pair
+# puts hand2.triple
+# puts hand2.flush
