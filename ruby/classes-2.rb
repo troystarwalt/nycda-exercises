@@ -1,16 +1,27 @@
 class Person; end
 class Student < Person; end
+class Prefect < Student; end
 class Faculty < Person; end
+class Teacher < Faculty; end
 class Principal < Faculty; end
+class Dean < Faculty; end
 class Admin < Person; end
 class Custodian < Admin; end
+class LunchLady < Admin; end
+class Pedestrian < Person; end
 
 class LockedRoom
 	# Only Custodians, Faculty, and the Prefect can enter this room
 	# true if p can enter
 	# false if they cannot
 	def self.enter(p)
-
+		if p.class == Custodian ||
+		   p.class <= Faculty ||
+		   p.class == Prefect
+		   true
+		else
+			false
+		end
     end
 end
 
