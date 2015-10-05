@@ -2,7 +2,7 @@
 console.log(presidents.length);
 function PresidentHeader(){
     var trElement = document.createElement("tr");
-    trElement.innerHTML = "<td>Number</td><td>President</td><td>Birth Year</td><td>Death Year</td>";
+    trElement.innerHTML = "<th>Number</th><th>President</th><th>Birth Year</th><th>Death Year</th>";
     return trElement;
 }
 function PresidentRow(pres){
