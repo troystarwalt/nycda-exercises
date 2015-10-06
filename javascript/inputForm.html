@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <style>
+            .red {
+                border: 2px solid red;
+            }
+            .green {
+                border: 2px solid green;
+            }
+        </style>
+    </head>
+    <body>
+        <!--<form action="/process" method="GET" id="snowwhite">-->
+        <!--<form action="/process" method="POST" id="snowwhite">-->
+        <form id="snowwhite">
+            <label for="rapunzel">Username</label>
+            <input id="rapunzel" type="text" name="username">
+            <label for="merida">Password</label>
+            <input id="merida" type="password" name="password">
+            <input id="mulan" type="submit" value="mulan submit">
+        </form>
+
+        <div id="cinderella">Please fill out the form for feedback</div>
+
+        <script>
+            // Here we are binding to the 'submit' event on the form element
+            // exercise-form-1: change the div to 'red' if the form is incorrect
+            // exercise-form-2: try changing the div to 'green' if the form is correct
+            // try doing the above by adding or removing CSS classes using
+            // element.classList.add() and element.classList.remove()
+            // Reference at https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+
+            var snowwhite = document.getElementById("snowwhite");
+            var rapunzel = document.getElementById("rapunzel");
+            var merida = document.getElementById("merida");
+            var cinderella = document.getElementById("cinderella");
+
+            snowwhite.onsubmit = function(event){
+                var valid = true;
+                if (rapunzel.value === ""){
+                    console.log("username cannot be blank");
+                    valid = false;
+                }
+
+                // why not use 'else if'? try changing this and see
+                if (merida.value === ""){
+                    console.log("password cannot be blank");
+                    valid = false;
+                }
+
+                return valid;
+            }
+        </script>
+
+        <hr>
+
+        <form id="grimhilde">
+            <label for="gothel">Benutzernamen</label>
+            <input id="gothel" type="text" name="benutzernamen">
+            <label for="mordu">Passwort</label>
+            <input id="mordu" type="password" name="passwort">
+            <input id="shanyu" type="submit" value="shanyu submit">
+        </form>
+
+        <div id="ladytremaine">Füllen Sie das Formular für pliyase erteilt</div>
+
+    </body>
+</html>
+
+
