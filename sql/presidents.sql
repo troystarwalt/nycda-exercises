@@ -8,8 +8,8 @@ CREATE TABLE IF NOT EXISTS presidents (
     death_year INTEGER,
     took_office DATE NOT NULL,
     left_office DATE,
-    party VARCHAR(100),
-    home_state VARCHAR(100)
+    party VARCHAR(100) NOT NULL,
+    home_state VARCHAR(100) NOT NULL
 );
 
 DROP TABLE IF EXISTS prime_ministers;
