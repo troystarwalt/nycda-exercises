@@ -44,30 +44,34 @@ SELECT * FROM presidents WHERE party IN ('Democratic', 'Republican');
 SELECT * FROM presidents WHERE party NOT IN ('Democratic', 'Republican');
 
 -- count how many presidents come from each state
-SELECT COUNT(home_state), home_state 
-    FROM presidents 
-    GROUP BY home_state 
+SELECT COUNT(home_state), home_state
+    FROM presidents
+    GROUP BY home_state
     ORDER BY COUNT(home_state) DESC;
 
 -- create a new calculated field, 'age', and ORDER BY age. JFK lived a short life.
 SELECT name, death_year - birth_year AS age FROM presidents WHERE death_year IS NOT NULL ORDER BY age;
 
 -- calculate the age of all presidents, living and not living. Combine the 2 tables together.
-(SELECT name, death_year - birth_year AS age 
-    FROM presidents 
+(SELECT name, death_year - birth_year AS age
+    FROM presidents
     WHERE death_year IS NOT NULL)
 UNION
-(SELECT name, 2915 - birth_year AS age 
-    FROM presidents 
+(SELECT name, 2915 - birth_year AS age
+    FROM presidents
     WHERE death_year IS NOT NULL);
 
 -- JOIN 2 tables based on a relationship between the 2.
 -- presidents own many pets, each pet has one owner.
 -- one-to-many relationship
-SELECT presidents.name, 
+SELECT presidents.name,
        presidentspets.name,
        presidentspets.breed,
-       presidentspets.species, 
-       presidents.party 
-       FROM presidents JOIN presidentspets 
+       presidentspets.species,
+       presidents.party
+       FROM presidents JOIN presidentspets
        ON presidents.president_number = presidentspets.owner;
+
+SELECT *
+    FROM sc_justices JOIN presidents
+    ON sc_justices.appointed_by = presidents.president_number;

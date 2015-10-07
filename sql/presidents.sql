@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS presidents;
 
 CREATE TABLE IF NOT EXISTS presidents (
     id SERIAL PRIMARY KEY,
-    president_number INTEGER NOT NULL,
+    president_number INTEGER UNIQUE NOT NULL,
     name VARCHAR(100),
     birth_year INTEGER NOT NULL,
     death_year INTEGER,
