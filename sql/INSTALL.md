@@ -25,14 +25,37 @@ Back in the original terminal #1:
     $ # should return some running processes
     $ createdb
     $ psql
-    $ psql>>> \list
-    $ psql>>> \conninfo
-    $ psql>>> \?
-    $ psql>>> ^C
+    $ postgres=# \list
+    $ postgres=# \conninfo
+    $ postgres=# \?
+    $ postgres=# ^C
     $ cd nycda-exercises/sql/
     $ ls
     INSTALL.md presidents-queries.sql presidents-queries-exercises.sql presidents.sql
     $ # this command runs the following SQL code on the 'postgres' database
     $ psql -d postgres -f presidents.sql
+    $ psql
+    $ postgres=# \list
+    -----------+----------+----------+-------------+-------------+-----------------------
+     nycdatwo  | nycdatwo | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+     postgres  | nycdatwo | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+     template0 | nycdatwo | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/nycdatwo          +
+               |          |          |             |             | nycdatwo=CTc/nycdatwo
+     template1 | nycdatwo | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/nycdatwo          +
+               |          |          |             |             | nycdatwo=CTc/nycdatwo
+    (4 rows)
+    $ postgres=# \conninfo
+    You are now connected to database "nycdatwo" as user "nycdatwo" via socket in "/tmp" at port "5432"
+    $ postgres=# \c postgres
+    You are now connected to database "postgres" as user "nycdatwo"
+    $ postgres=# \dt
+                  List of relations
+     Schema |      Name       | Type  |  Owner
+    --------+-----------------+-------+----------
+     public | presidents      | table | nycdatwo
+     public | prime_ministers | table | nycdatwo
+    (2 rows)
+
+    $ postgres=# SELECT * FROM presidents;
 
 
