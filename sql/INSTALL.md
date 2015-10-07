@@ -28,5 +28,11 @@ Back in the original terminal #1:
     $ psql>>> \list
     $ psql>>> \conninfo
     $ psql>>> \?
+    $ psql>>> ^C
+    $ cd nycda-exercises/sql/
+    $ ls
+    INSTALL.md presidents-queries.sql presidents-queries-exercises.sql presidents.sql
+    $ # this command runs the following SQL code on the 'postgres' database
+    $ psql -d postgres -f presidents.sql
 
-You'll have to make a `database` and then a table... left as an exercise to the reader.
+
