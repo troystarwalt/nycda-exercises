@@ -36,6 +36,8 @@ Back in the original terminal #1:
     $ psql -d postgres -f presidents.sql
     $ psql
     $ postgres=# \list
+                                      List of databases
+       Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges
     -----------+----------+----------+-------------+-------------+-----------------------
      nycdatwo  | nycdatwo | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
      postgres  | nycdatwo | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
