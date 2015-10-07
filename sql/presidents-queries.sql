@@ -60,3 +60,14 @@ UNION
 (SELECT name, 2915 - birth_year AS age 
     FROM presidents 
     WHERE death_year IS NOT NULL);
+
+-- JOIN 2 tables based on a relationship between the 2.
+-- presidents own many pets, each pet has one owner.
+-- one-to-many relationship
+SELECT presidents.name, 
+       presidentspets.name,
+       presidentspets.breed,
+       presidentspets.species, 
+       presidents.party 
+       FROM presidents JOIN presidentspets 
+       ON presidents.president_number = presidentspets.owner;
