@@ -2,8 +2,14 @@
 
 to install postgres on a Mac with Homebrew:
 
+----
+
+In a terminal #1, run:
+
     $ brew install homebrew/versions/postgresql93
     $ initdb /usr/local/var/postgres -E utf8
+
+----
 
 In a separate terminal #2, run:
 
