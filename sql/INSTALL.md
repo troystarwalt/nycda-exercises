@@ -21,21 +21,23 @@ In a separate terminal #2, run:
 
 Back in the original terminal #1:
 
+    $ whoami
+    nycdatwo
     $ ps -ef | grep postgres
     $ # should return some running processes
     $ createdb
     $ psql
-    $ postgres=# \list
-    $ postgres=# \conninfo
-    $ postgres=# \?
-    $ postgres=# ^C
+    $ nycdatwo=# \list
+    $ nycdatwo=# \conninfo
+    $ nycdatwo=# \?
+    $ nycdatwo=# ^C
     $ cd nycda-exercises/sql/
     $ ls
     INSTALL.md presidents-queries.sql presidents-queries-exercises.sql presidents.sql
     $ # this command runs the following SQL code on the 'postgres' database
     $ psql -d postgres -f presidents.sql
     $ psql
-    $ postgres=# \list
+    $ nycdatwo=# \list
                                       List of databases
        Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges
     -----------+----------+----------+-------------+-------------+-----------------------
@@ -46,9 +48,9 @@ Back in the original terminal #1:
      template1 | nycdatwo | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/nycdatwo          +
                |          |          |             |             | nycdatwo=CTc/nycdatwo
     (4 rows)
-    $ postgres=# \conninfo
+    $ nycdatwo=# \conninfo
     You are now connected to database "nycdatwo" as user "nycdatwo" via socket in "/tmp" at port "5432"
-    $ postgres=# \c postgres
+    $ nycdatwo=# \c postgres
     You are now connected to database "postgres" as user "nycdatwo"
     $ postgres=# \dt
                   List of relations
