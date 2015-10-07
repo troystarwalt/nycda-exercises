@@ -22,8 +22,8 @@ CREATE TABLE IF NOT EXISTS prime_ministers (
     took_office DATE NOT NULL,
     left_office DATE,
     death_year INTEGER
-    party VARCHAR(100),
-    home_city VARCHAR(100)
+    -- party VARCHAR(100),
+    -- home_city VARCHAR(100)
 );
 
 
