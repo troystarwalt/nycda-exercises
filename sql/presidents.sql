@@ -1,3 +1,9 @@
+-- more info at http://datahub.io/dataset/list-of-us-presidents/resource/ba0cdb03-c0f0-45ff-a21f-63fdf6ce1a89
+-- TODO: adding presidents' cabinet members would make for some interesting many-to-many relations
+--  example: Donald Rumsfeld was in the cabinet of 2 different presidents (I think)
+-- TODO: famous quotes could be a one-to-many relation
+-- TODO: 
+
 DROP TABLE IF EXISTS presidents;
 
 CREATE TABLE IF NOT EXISTS presidents (
@@ -25,9 +31,6 @@ CREATE TABLE IF NOT EXISTS prime_ministers (
     -- party VARCHAR(100),
     -- home_city VARCHAR(100)
 );
-
-
--- more info at http://datahub.io/dataset/list-of-us-presidents/resource/ba0cdb03-c0f0-45ff-a21f-63fdf6ce1a89
 
 INSERT INTO presidents VALUES (DEFAULT, 1, 'George Washington', 1732, 1799, '1789-04-30', '1797-03-04', 'No Party', 'Virginia');
 INSERT INTO presidents VALUES (DEFAULT, 44,'Barack Obama',1961,null,'2009-01-20',null,'Democratic', 'Illinois');
@@ -74,7 +77,7 @@ INSERT INTO presidents VALUES (DEFAULT, 4,'James Madison',1751,1836,'1809-03-04'
 INSERT INTO presidents VALUES (DEFAULT, 3,'Thomas Jefferson',1743,1826,'1801-03-04','1809-03-04','Democratic-Republican', 'Virginia');
 INSERT INTO presidents VALUES (DEFAULT, 2,'John Adams',1735,1826,'1797-03-04','1801-03-04','Federalist');
 
--- I'll change this to the YYYY-MM-DD later and fix the order later, too
+-- I'll change this to the YYYY-MM-DD later and fix the order of the columns for prime ministers later, too
 SET datestyle = 'ISO, MDY';
 
 INSERT INTO prime_ministers VALUES (DEFAULT, 1,'Robert Walpole',1676,'4/4/1721','2/11/1742',1745);
