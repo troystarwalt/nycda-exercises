@@ -18,9 +18,12 @@
     - [presidents-queries](../sql/presidents-queries.sql)
     - [presidents-queries-exercises](../sql/presidents-queries-exercises.sql)
 
-2. Migrate the [presidentspets](../sql/presidentspets.sql) table into an ActiveRecord relation
-3. Migrate the [sc_justices](../sql/sc_justices.sql) table into an ActiveRecord relation
-
+2. add a way to import the tables into Postgres
+    - edit [db/seeds.rb](db/seeds.rb) and then re run `bundle exec rake db:seed`
+3. Add the [presidentspets](../sql/presidentspets.sql) table as ActiveRecord
+    - add the relationship between a `pet` and ` president` using `belongs_to`
+4. Add the [sc_justices](../sql/sc_justices.sql) table as ActiveRecord
+    - add the relationship between a `justice` and ` president` using `belongs_to`
 
 #Other
 Some other rake commands:
