@@ -4,7 +4,7 @@
 -- TODO: famous quotes could be a one-to-many relation
 -- TODO: 
 
-DROP TABLE IF EXISTS presidents;
+DROP TABLE IF EXISTS presidents CASCADE;
 
 CREATE TABLE IF NOT EXISTS presidents (
     id SERIAL PRIMARY KEY,
@@ -75,7 +75,7 @@ INSERT INTO presidents VALUES (DEFAULT, 6,'John Quincy Adams',1767,1848,'1825-03
 INSERT INTO presidents VALUES (DEFAULT, 5,'James Monroe',1758,1831,'1817-03-04','1825-03-04','Democratic-Republican', 'Virginia');
 INSERT INTO presidents VALUES (DEFAULT, 4,'James Madison',1751,1836,'1809-03-04','1817-03-04','Democratic-Republican', 'Virginia');
 INSERT INTO presidents VALUES (DEFAULT, 3,'Thomas Jefferson',1743,1826,'1801-03-04','1809-03-04','Democratic-Republican', 'Virginia');
-INSERT INTO presidents VALUES (DEFAULT, 2,'John Adams',1735,1826,'1797-03-04','1801-03-04','Federalist');
+INSERT INTO presidents VALUES (DEFAULT, 2,'John Adams',1735,1826,'1797-03-04','1801-03-04','Federalist', 'Massachusetts');
 
 -- I'll change this to the YYYY-MM-DD later and fix the order of the columns for prime ministers later, too
 SET datestyle = 'ISO, MDY';

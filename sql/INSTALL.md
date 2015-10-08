@@ -36,6 +36,20 @@ Back in the original terminal #1:
     INSTALL.md presidents-queries.sql presidents-queries-exercises.sql presidents.sql
     $ # this command runs the following SQL code on the 'postgres' database
     $ psql -d postgres -f presidents.sql
+    DROP TABLE
+    psql:presidents.sql:19: NOTICE:  CREATE TABLE will create implicit sequence "presidents_id_seq" for serial column "presidents.id"
+    psql:presidents.sql:19: NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "presidents_pkey" for table "presidents"
+    psql:presidents.sql:19: NOTICE:  CREATE TABLE / UNIQUE will create implicit index "presidents_president_number_key" for table "presidents"
+    CREATE TABLE
+    DROP TABLE
+    psql:presidents.sql:33: NOTICE:  CREATE TABLE will create implicit sequence "prime_ministers_id_seq" for serial column "prime_ministers.id"
+    psql:presidents.sql:33: NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "prime_ministers_pkey" for table "prime_ministers"
+    CREATE TABLE
+    INSERT 0 1
+    INSERT 0 1
+    <snipped extraneous>
+    INSERT 0 1
+    SET
     $ psql
     $ nycdatwo=# \list
                                       List of databases
