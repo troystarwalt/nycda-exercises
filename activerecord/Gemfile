@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+
+gem 'rake'
+gem 'activerecord'
+gem 'sinatra'
+gem 'sinatra-activerecord'
+gem 'pg'
+
+# add some debugging tools
+gem 'awesome_print'
+gem 'pry'
