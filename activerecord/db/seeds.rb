@@ -1,4 +1,4 @@
-require './demo.rb'
+require './app.rb'
 
 connection = ActiveRecord::Base.connection
 
