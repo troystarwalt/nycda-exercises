@@ -62,4 +62,20 @@ Back in the original terminal #1:
 
     $ postgres=# SELECT * FROM presidents;
 
+We can even run queries from the terminal
+
+    $ psql -d postgres -c 'SELECT * FROM presidents LIMIT 10;'
+     id | president_number |       name        | birth_year | death_year | took_office | left_office |   party    | home_state
+    ----+------------------+-------------------+------------+------------+-------------+-------------+------------+------------
+      1 |                1 | George Washington |       1732 |       1799 | 1789-04-30  | 1797-03-04  | No Party   | Virginia
+      2 |               44 | Barack Obama      |       1961 |            | 2009-01-20  |             | Democratic | Illinois
+      3 |               43 | George W. Bush    |       1946 |            | 2001-01-20  | 2009-01-20  | Republican | Texas
+      4 |               42 | Bill Clinton      |       1946 |            | 1993-01-20  | 2001-01-20  | Democratic | Arkansas
+      5 |               41 | George H. W. Bush |       1924 |            | 1989-01-20  | 1993-01-20  | Republican | Texas
+      6 |               40 | Ronald Reagan     |       1911 |       2004 | 1981-01-20  | 1989-01-20  | Republican | California
+      7 |               39 | Jimmy Carter      |       1924 |            | 1977-01-20  | 1981-01-20  | Democratic | Georgia
+      8 |               38 | Gerald Ford       |       1913 |       2006 | 1974-08-09  | 1977-01-20  | Republican | Michigan
+      9 |               37 | Richard Nixon     |       1913 |       1994 | 1969-01-20  | 1974-08-09  | Republican | California
+     10 |               36 | Lyndon B. Johnson |       1908 |       1973 | 1963-11-22  | 1969-01-20  | Democratic | Texas
+    (10 rows)
 
