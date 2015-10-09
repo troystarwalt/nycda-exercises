@@ -7,5 +7,6 @@ gem 'sinatra-activerecord'
 gem 'pg'
 
 # add some debugging tools
+gem 'rerun'
 gem 'awesome_print'
 gem 'pry'
