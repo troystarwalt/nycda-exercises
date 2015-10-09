@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body>
+        <p>length? <%= params[:users].length %></p>
+
+        <% params[:users].each do |u| %>
+            <%= u.name %>
+        <% end %>
+    </body>
+</html>
