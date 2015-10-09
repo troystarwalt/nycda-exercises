@@ -3,6 +3,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'pg'
 require './models'
+require 'rerun'
 
 ActiveRecord::Base.establish_connection(
   :adapter => 'postgresql',

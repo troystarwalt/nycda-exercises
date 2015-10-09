@@ -1,22 +1,90 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400|Roboto|Lato|Oswald|Source+Sans+Pro|Raleway' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		table, th, td{
+			border-collapse: collapse;
+			border: 1px dotted purple;
+			table-layout: center;
+			padding: 20px;
+			font-family: Raleway;
+		}
+
+		thead, th {
+			border: 2px dashed green;
+			font-variant: small-caps;
+		}
+
+		td {
+			text-align: center;
+		}
+
+	</style>
+
+
 	</head>
 	<body>
 		<p>How many presidents do we have? <%= params[:presidents].length %></p>
 		<% 1.upto(44) do |n| %>
-			<span style="color:rgb(<%=rand(255)%>,<%=rand(255)%>,<%=rand(255)%>);">
+			<span style="color:rgb(<%=rand(25)%>,<%=rand(255)%>,<%=rand(0)%>);">
 				<%= n %>
 			</span>
 		<% end %>
 
 		<ul>
 			<% params[:presidents].each do |p| %>
-				<li style="color:rgb(<%=rand(255)%>,<%=rand(255)%>,<%=rand(255)%>);">
+				<li style="color:rgb(<%=rand(255)%>,<%=rand(255)%>,<%=rand(255)%>); list-style: none; display: inline;">
 					<%= p.name %>
 				</li>
 			<% end %>
 		</ul>
+
+		<table>
+			<thead>				
+				<tr>
+					<th>
+						ID Bitches
+					</th>
+					<th>
+						Name Bitches
+					</th>
+
+					<th>
+						Dead Bitches
+					</th>
+					<th>
+						State Bitches
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+			<% params[:presidents].each do |tn| %>
+				<tr>
+				
+					<td>
+					
+						<%= tn.president_number%>
+						
+					</td>
+
+					<td>
+						<%= tn.name%>
+						
+					</td>						
+					<td>
+						<%= tn.death_year%>
+
+					</td>
+
+					<td>
+						<%= tn.home_state %>
+					</td>			
+
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
 
 		<p>Hello, nurse.</p>
 	</body>
