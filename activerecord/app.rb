@@ -1,4 +1,6 @@
 require 'active_record'
+require 'sinatra'
+require 'sinatra/activerecord'
 require 'pg'
 require './models'
 
@@ -11,3 +13,8 @@ ActiveRecord::Base.establish_connection(
 )
 
 c = ActiveRecord::Base.connection
+
+get "/" do
+	params[:presidents] = President.all
+	erb :index
+end
