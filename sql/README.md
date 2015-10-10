@@ -27,10 +27,10 @@ Back in the original terminal #1:
     $ # should return some running processes
     $ createdb
     $ psql
-    $ nycdatwo=# \list
-    $ nycdatwo=# \conninfo
-    $ nycdatwo=# \?
-    $ nycdatwo=# ^C
+    $ >>> nycdatwo=# \list
+    $ >>> nycdatwo=# \conninfo
+    $ >>> nycdatwo=# \?
+    $ >>> nycdatwo=# ^C
     $ cd nycda-exercises/sql/
     $ ls
     INSTALL.md presidents-queries.sql presidents-queries-exercises.sql presidents.sql
@@ -51,7 +51,7 @@ Back in the original terminal #1:
     INSERT 0 1
     SET
     $ psql
-    $ nycdatwo=# \list
+    $ >>> nycdatwo=# \list
                                       List of databases
        Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges
     -----------+----------+----------+-------------+-------------+-----------------------
@@ -62,11 +62,11 @@ Back in the original terminal #1:
      template1 | nycdatwo | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/nycdatwo          +
                |          |          |             |             | nycdatwo=CTc/nycdatwo
     (4 rows)
-    $ nycdatwo=# \conninfo
+    $ >>> nycdatwo=# \conninfo
     You are now connected to database "nycdatwo" as user "nycdatwo" via socket in "/tmp" at port "5432"
     $ nycdatwo=# \c postgres
     You are now connected to database "postgres" as user "nycdatwo"
-    $ postgres=# \dt
+    $ >>> postgres=# \dt
                   List of relations
      Schema |      Name       | Type  |  Owner
     --------+-----------------+-------+----------

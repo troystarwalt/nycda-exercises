@@ -1,4 +1,6 @@
-#Run these commands:
+#Active Record
+
+##Run these commands:
 
     $ bundle install
 
@@ -76,7 +78,7 @@ For this exercise, I also added a set of nice gems, `pry` and `awesome_print`.
     => nil
     $
 
-#Exercises
+##Exercises
 1. Do the SQL exercises that we did last time, but now in Ruby.
     - [presidents-queries](../sql/presidents-queries.sql)
     - [presidents-queries-exercises](../sql/presidents-queries-exercises.sql)
@@ -88,8 +90,32 @@ For this exercise, I also added a set of nice gems, `pry` and `awesome_print`.
 4. Add the [sc_justices](../sql/sc_justices.sql) table as ActiveRecord
     - add the relationship between a `justice` and ` president` using `belongs_to`
 
-#Other
-Some other rake commands:
-	rake db:reset
+##Other
+
+This lists all the available rake tasks
+
+	bundle exec rake -T
+
+You can also combine the commands before in one step:
+
 	rake db:drop db:create db:migrate
+
+----
+
+#Sinatra + ActiveRecord
+
+So for this exercise, we also have a gem called `rerun`. This helps us reload
+sinatra everytime we make a change to a file ending with `.rb|.erb`. This is
+useful as we just have to hit save in our favorite `EDITOR` and then hit the
+browser.
+
+You should have the `rerun` gem installed from the Gemfile. Try running the
+following to get an idea of what rerun does:
+
+    bundle exec rerun
+
+To run the app.rb file with rerun:
+
+    $ bundle exec rerun 'ruby app.rb'
+
 
